@@ -1,6 +1,6 @@
 /**
  * @file Arduino_Car.ino
- * @brief Projet Earth_Drone.
+ * @brief Projet Continental_Demo_Car.
  * 
  *   Ce programme a été développé pour piloter une maquette de voiture.
  *   Il repose sur le système d'exploitation FreeRTOS, chargé de 
@@ -46,7 +46,7 @@ QueueHandle_t Driving_Queue;
 /// @brief Objet Serial pour la communication Bluetooth avec le module HC-06.
 SoftwareSerial BLUETOOTH_MODULE_HC06(BLUETOOTH_RX, BLUETOOTH_TX);
 
-/// @brief Création de l'objet Earth_Drone.
+/// @brief Création de l'objet Continental_Demo_Car.
 Arduino_Car Earth_Drone;
 
 /************************************************************
@@ -238,15 +238,15 @@ void Task_Alerts(void *pvParameters)
       /// Analyse du message reçu et appel de la fonction d'alerte correspondante
       if(!strcmp("klaxonne", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.klaxonne();
+        Continental_Demo_Car.klaxonne();
       }
       else if(!strcmp("plein_phare", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.plein_phare();
+        Continental_Demo_Car.plein_phare();
       }
       else if(!strcmp("clignotte", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.clignotte();
+        Continental_Demo_Car.clignotte();
       }
       else
       {
@@ -261,7 +261,7 @@ void Task_Alerts(void *pvParameters)
 
 #if DEBUG_MODE        
     /// Affiche l'action exécutée dans le terminal série (mode debug)
-    Serial.println(Earth_Drone.action_car);
+    Serial.println(Continental_Demo_Car.action_car);
 #endif
 
     vTaskDelay(1);
@@ -294,23 +294,23 @@ void Task_Driving(void *pvParameters)
       /// Analyse du message reçu et appel de la fonction de conduite correspondante
       if(!strcmp("avance", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.avance();
+        Continental_Demo_Car.avance();
       }
       else if(!strcmp("recule", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.recule();
+        Continental_Demo_Car.recule();
       }
       else if(!strcmp("tourne_a_droite", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.tourne_a_droite();
+        Continental_Demo_Car.tourne_a_droite();
       }
       else if(!strcmp("tourne_a_gauche", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.tourne_a_gauche();
+        Continental_Demo_Car.tourne_a_gauche();
       }
       else if(!strcmp("stop", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Earth_Drone.stop();
+        Continental_Demo_Car.stop();
       }
       else
       {
@@ -325,7 +325,7 @@ void Task_Driving(void *pvParameters)
 
 #if DEBUG_MODE        
     /// Affiche l'action exécutée dans le terminal série (mode debug)
-    Serial.println(Earth_Drone.action_car);
+    Serial.println(Continental_Demo_Car.action_car);
 #endif
 
     vTaskDelay(1);
