@@ -47,7 +47,7 @@ QueueHandle_t Driving_Queue;
 SoftwareSerial BLUETOOTH_MODULE_HC06(BLUETOOTH_RX, BLUETOOTH_TX);
 
 /// @brief Création de l'objet Continental_Demo_Car.
-Arduino_Car Earth_Drone;
+Arduino_Car Continental_Demo_Car;
 
 /************************************************************
  *                    PROTOTYPES DE FONCTIONS               *
