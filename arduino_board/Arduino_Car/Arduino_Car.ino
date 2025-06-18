@@ -238,7 +238,7 @@ void Task_Alerts(void *pvParameters)
       /// Analyse du message reçu et appel de la fonction d'alerte correspondante
       if(!strcmp("klaxonne", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Continental_Demo_Car.klaxonne(); //groupe 2
+        Continental_Demo_Car.clignotte(); 
       }
       else if(!strcmp("plein_phare", Task_Bluetooth_Commande_Recu.c_str()))
       {
@@ -246,7 +246,7 @@ void Task_Alerts(void *pvParameters)
       }
       else if(!strcmp("clignotte", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Continental_Demo_Car.clignotte(); // groupe 2
+        Continental_Demo_Car.klaxonne(); 
       }
       else
       {
@@ -294,11 +294,11 @@ void Task_Driving(void *pvParameters)
       /// Analyse du message reçu et appel de la fonction de conduite correspondante
       if(!strcmp("avance", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Continental_Demo_Car.avance(); //Equipe mouvement:Bonnet.E Breynes.G Beralez.T Marchou.A
+        Continental_Demo_Car.recule();
       }
       else if(!strcmp("recule", Task_Bluetooth_Commande_Recu.c_str()))
       {
-        Continental_Demo_Car.recule();
+        Continental_Demo_Car.avance();
       }
       else if(!strcmp("tourne_a_droite", Task_Bluetooth_Commande_Recu.c_str()))
       {
