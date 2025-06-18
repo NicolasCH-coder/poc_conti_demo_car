@@ -20,7 +20,7 @@
 #include <Arduino_FreeRTOS.h>       ///< Bibliothèque Arduino_FreeRTOS pour la gestion multitâche.
 #include <queue.h>                  ///< Bibliothèque queue pour la gestion des files.
 #include <SoftwareSerial.h>         ///< Bibliothèque SoftwareSerial pour la communication série.
-#include "include/Arduino_car.hpp"  ///< Header Arduino_car.hpp pour la description de la classe Arduino_Car
+#include "include/Arduino_car.hpp"  ///< Header Arduino_car.hpp pour la description de la classe Arduino_Car 
 
 /************************************************************
  *                  DÉFINITIONS ET CONSTANTES               *
