@@ -292,11 +292,11 @@ void Task_Driving(void *pvParameters)
       Task_Bluetooth_Commande_Recu.trim();
 
       /// Analyse du message reçu et appel de la fonction de conduite correspondante
-      if(!strcmp("avance", Task_Bluetooth_Commande_Recu.c_str()))
+      if(!strcmp("recule", Task_Bluetooth_Commande_Recu.c_str()))
       {
         Continental_Demo_Car.recule();
       }
-      else if(!strcmp("recule", Task_Bluetooth_Commande_Recu.c_str()))
+      else if(!strcmp("avance", Task_Bluetooth_Commande_Recu.c_str()))
       {
         Continental_Demo_Car.avance();
       }
