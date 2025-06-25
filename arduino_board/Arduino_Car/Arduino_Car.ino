@@ -236,7 +236,7 @@ void Task_Alerts(void *pvParameters)
       Task_Bluetooth_Commande_Recu.trim();
 
       /// Analyse du message reçu et appel de la fonction d'alerte correspondante
-      if(!strcmp("klaxonne", Task_Bluetooth_Commande_Recu.c_str()))
+      if(!strcmp("clignotte", Task_Bluetooth_Commande_Recu.c_str()))
       {
         Continental_Demo_Car.clignotte(); 
       }
@@ -244,7 +244,7 @@ void Task_Alerts(void *pvParameters)
       {
         Continental_Demo_Car.plein_phare();
       }
-      else if(!strcmp("clignotte", Task_Bluetooth_Commande_Recu.c_str()))
+      else if(!strcmp("klaxonne", Task_Bluetooth_Commande_Recu.c_str()))
       {
         Continental_Demo_Car.klaxonne(); 
       }
